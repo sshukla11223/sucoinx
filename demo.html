@@ -165,14 +165,66 @@
   </div>
 
   <div class="card">
-    <h2>Demo Trading</h2>
-    <br>
-    <p class="buy">BUY — Virtual trading</p>
-    <br>
-    <p class="sell">SELL — Virtual trading</p>
+  <h2>Demo Trading</h2>
+
+  <label>Asset</label>
+  <select id="asset">
+    <option value="BTC">Bitcoin (BTC)</option>
+    <option value="ETH">Ethereum (ETH)</option>
+    <option value="USDT">Tether (USDT)</option>
+  </select>
+
+  <label>Amount (₹)</label>
+  <input id="amount" type="number" placeholder="Enter amount">
+
+  <br><br>
+
+  <button id="buyBtn" class="buy">BUY</button>
+  <button id="sellBtn" class="sell">SELL</button>
+
+  <p id="tradeMessage"></p>
   </div>
 
 </main>
+<script>
+let balance = 1000000;
 
+document.getElementById("buyBtn").addEventListener("click", function () {
+  const amount = Number(document.getElementById("amount").value);
+  const asset = document.getElementById("asset").value;
+  const message = document.getElementById("tradeMessage");
+
+  if (!amount || amount <= 0) {
+    message.textContent = "Please enter a valid amount.";
+    return;
+  }
+
+  if (amount > balance) {
+    message.textContent = "Insufficient demo balance.";
+    return;
+  }
+
+  balance -= amount;
+  message.textContent =
+    "BUY " + asset + " successful. Demo balance: ₹" +
+    balance.toLocaleString("en-IN");
+});
+
+document.getElementById("sellBtn").addEventListener("click", function () {
+  const amount = Number(document.getElementById("amount").value);
+  const asset = document.getElementById("asset").value;
+  const message = document.getElementById("tradeMessage");
+
+  if (!amount || amount <= 0) {
+    message.textContent = "Please enter a valid amount.";
+    return;
+  }
+
+  balance += amount;
+  message.textContent =
+    "SELL " + asset + " successful. Demo balance: ₹" +
+    balance.toLocaleString("en-IN");
+});
+                                                    </script>
 </body>
 </html>
