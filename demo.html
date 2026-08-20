@@ -1,1 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUCOIN X - Demo Wallet</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .back {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .balance {
+      background: #111827;
+      color: white;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .balance small {
+      color: #cbd5e1;
+    }
+
+    .balance h1 {
+      margin-top: 8px;
+      font-size: 34px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .asset {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .asset:last-child {
+      border-bottom: none;
+    }
+
+    .asset-name {
+      font-weight: bold;
+    }
+
+    .asset-price {
+      color: #6b7280;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .buy {
+      color: #16a34a;
+      font-weight: bold;
+    }
+
+    .sell {
+      color: #dc2626;
+      font-weight: bold;
+    }
+
+    .notice {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 15px;
+      border-radius: 10px;
+      color: #1e40af;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .balance h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SUCOIN X</div>
+  <a class="back" href="index.html">← Dashboard</a>
+</header>
+
+<main class="container">
+
+  <div class="balance">
+    <small>Demo Wallet Balance</small>
+    <h1>₹ 10,00,000</h1>
+  </div>
+
+  <div class="notice">
+    🟢 This is a demo wallet. All balances and transactions are virtual.
+  </div>
+
+  <div class="card">
+    <h2>Demo Assets</h2>
+
+    <div class="asset">
+      <div>
+        <div class="asset-name">₿ Bitcoin (BTC)</div>
+        <div class="asset-price">Demo Price</div>
+      </div>
+      <div>0 BTC</div>
+    </div>
+
+    <div class="asset">
+      <div>
+        <div class="asset-name">Ξ Ethereum (ETH)</div>
+        <div class="asset-price">Demo Price</div>
+      </div>
+      <div>0 ETH</div>
+    </div>
+
+    <div class="asset">
+      <div>
+        <div class="asset-name">₮ Tether (USDT)</div>
+        <div class="asset-price">Demo Price</div>
+      </div>
+      <div>0 USDT</div>
+    </div>
+
+  </div>
+
+  <div class="card">
+    <h2>Demo Trading</h2>
+    <br>
+    <p class="buy">BUY — Virtual trading</p>
+    <br>
+    <p class="sell">SELL — Virtual trading</p>
+  </div>
+
+</main>
+
+</body>
+</html>
