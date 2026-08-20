@@ -3,16 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUCOIN X</title>
+
+  <title>SUCOIN X - Trade. Secure. Simple.</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #111827;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .login {
+      background: white;
+      color: #111827;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 45px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #6b7280;
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    .balance {
+      background: #111827;
+      color: white;
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .balance small {
+      color: #cbd5e1;
+    }
+
+    .balance h2 {
+      margin-top: 8px;
+      font-size: 30px;
+    }
+
+    .wallets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .wallet {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .wallet h3 {
+      margin-bottom: 10px;
+    }
+
+    .wallet p {
+      color: #6b7280;
+      margin-bottom: 18px;
+    }
+
+    .demo {
+      border-top: 4px solid #2563eb;
+    }
+
+    .real {
+      border-top: 4px solid #16a34a;
+    }
+
+    button.action {
+      border: none;
+      padding: 11px 16px;
+      border-radius: 8px;
+      margin-right: 6px;
+      font-weight: bold;
+    }
+
+    .demo-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .real-btn {
+      background: #16a34a;
+      color: white;
+    }
+
+    .markets {
+      background: white;
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 15px;
+    }
+
+    .market {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .market:last-child {
+      border-bottom: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #6b7280;
+    }
+
+    @media (max-width: 600px) {
+      .wallets {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>Welcome to SUCOIN X</h1>
-  <p>Trade. Secure. Simple.</p>
+  <header>
+    <div class="logo">SUCOIN X</div>
+    <button class="login">Login / Sign Up</button>
+  </header>
 
-  <h2>Wallets</h2>
-  <button>Demo Wallet</button>
-  <button>Real Wallet</button>
+  <section class="hero">
+    <h1>Trade. Secure. Simple.</h1>
+    <p>Your crypto trading platform</p>
+  </section>
+
+  <main class="container">
+
+    <div class="balance">
+      <small>Total Portfolio Balance</small>
+      <h2>₹ 0.00</h2>
+    </div>
+
+    <div class="wallets">
+
+      <div class="wallet demo">
+        <h3>🟢 Demo Wallet</h3>
+        <p>Practice with virtual funds.</p>
+        <h2>₹ 10,00,000</h2>
+        <br>
+        <button class="action demo-btn">Open Demo</button>
+      </div>
+
+      <div class="wallet real">
+        <h3>🔴 Real Wallet</h3>
+        <p>Real assets will appear here.</p>
+        <h2>₹ 0.00</h2>
+        <br>
+        <button class="action real-btn">Open Wallet</button>
+      </div>
+
+    </div>
+
+    <div class="markets">
+      <h2>Markets</h2>
+
+      <div class="market">
+        <span>₿ BTC / INR</span>
+        <strong>₹ —</strong>
+      </div>
+
+      <div class="market">
+        <span>Ξ ETH / INR</span>
+        <strong>₹ —</strong>
+      </div>
+
+      <div class="market">
+        <span>₮ USDT / INR</span>
+        <strong>₹ —</strong>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 SUCOIN X · Demo Prototype
+  </footer>
 
 </body>
 </html>
