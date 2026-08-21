@@ -200,7 +200,7 @@
       <div class="wallet demo">
         <h3>🟢 Demo Wallet</h3>
         <p>Practice with virtual funds.</p>
-        <h2>₹ 10,00,000</h2>
+        <h2 id="demoBalance">₹ 10,00,000</h2>
         <br>
         <button class="action demo-btn">Open Demo</button>
       </div>
@@ -300,12 +300,15 @@ function logout() {
   window.location.href = "login.html";
 }
 </script>
-  <script>
+<script>
 const savedBalance =
   Number(localStorage.getItem("demoBalance")) || 1000000;
 
 document.getElementById("portfolioBalance").textContent =
   "₹ " + savedBalance.toLocaleString("en-IN");
-  </script>
+
+document.getElementById("demoBalance").textContent =
+  "₹ " + savedBalance.toLocaleString("en-IN");
+</script>
 </body>
 </html>
