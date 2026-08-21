@@ -181,7 +181,7 @@
 
     <div class="balance">
       <small>Total Portfolio Balance</small>
-      <h2>₹ 0.00</h2>
+      <h2 id="portfolioBalance">₹ 0.00</h2>
     </div>
 <div style="text-align:center; margin:20px 0;">
   <a href="transactions.html"
@@ -300,5 +300,12 @@ function logout() {
   window.location.href = "login.html";
 }
 </script>
+  <script>
+const savedBalance =
+  Number(localStorage.getItem("demoBalance")) || 1000000;
+
+document.getElementById("portfolioBalance").textContent =
+  "₹ " + savedBalance.toLocaleString("en-IN");
+  </script>
 </body>
 </html>
