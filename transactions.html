@@ -133,24 +133,54 @@ h1 {
 
   <div class="card">
 
-    <div class="transaction">
-      <div>
-        <div class="type deposit">Deposit</div>
-        <div class="date">Demo transaction · Today</div>
-        <div class="status">Completed</div>
-      </div>
+    <div id="transactionList"></div>
+      <div id="transactionList"></div>
 
-      <div class="amount deposit">+ ₹10,000</div>
-    </div>
+</div>
+</div>
 
-    <div class="transaction">
-      <div>
-        <div class="type trade">Buy BTC</div>
-        <div class="date">Demo transaction · Today</div>
-        <div class="status">Completed</div>
-      </div>
+<script>
+function loadTransactions() {
+    const list = document.getElementById("transactionList");
 
-      <div class="amount trade">₹5,000</div>
-    </div>
+    const transactions =
+        JSON.parse(localStorage.getItem("transactions") || "[]");
 
-    <div class="transaction
+    if (transactions.length === 0) {
+        list.innerHTML =
+            '<div class="empty">No transactions yet.</div>';
+        return;
+    }
+
+    list.innerHTML = transactions.map(tx => {
+        const amount = Number(tx.amount).toLocaleString("en-IN");
+
+        return `
+            <div class="transaction">
+                <div>
+                    <div class="type ${tx.type.toLowerCase()}">
+                        ${tx.type}
+                    </div>
+
+                    <div class="date">
+                        ${tx.date}
+                    </div>
+
+                    <div class="status">
+                        ${tx.status}
+                    </div>
+                </div>
+
+                <div class="amount ${tx.type.toLowerCase()}">
+                    ${tx.type === "Deposit" ? "+ " : "- "}₹${amount}
+                </div>
+            </div>
+        `;
+    }).join("");
+}
+
+loadTransactions();
+</script>
+
+</body>
+</html>
